@@ -1,0 +1,33 @@
+<h1>Users</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Address</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.Name %></td>
+        <td><%= user.Code %></td>
+        <td><%= user.Address %></td>
+        <td><%= user.Phone %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user,
+              data: {
+                "turbo-method": :delete,
+                controller: "confirmation",
+                "confirmation-message-value": 'Are you sure?',
+                action: "confirmation#confirm"
+              } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New user", new_user_path, class:"btn btn-info" %>

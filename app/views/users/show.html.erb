@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="jumbotron">
+
+  <h1 class="display-4"><%= @user.Name %> </h1>
+
+  <p class="lead">
+    <%= @user.Name %> |
+    <%= @user.Code %> |
+    <%= @user.Address %> |
+    <%= @user.Phone %> |
+  </p>
+    <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+
+  <div>
+    <%= link_to "Edit this user", edit_user_path(@user), class:"btn btn-info" %> |
+    <%= link_to "Back to users", users_path, class:"btn btn-info" %>
+  </div>
+
+</div>
+
